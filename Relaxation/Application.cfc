@@ -12,8 +12,8 @@ component {
 	* @output true
 	**/
 	public function onRequestStart() {
-		if ( isDefined("url.Reinit") || isNull(application.Relaxation) ) {
-			application.Relaxation = new com.Relaxation.Relaxation( "./RestConfig.json.cfm" );
+		if ( isDefined("url.Reinit") || isNull(application.REST) ) {
+			application.REST = new com.Relaxation.Relaxation( "./RestConfig.json.cfm" );
 		}
 	}
 	
@@ -22,7 +22,7 @@ component {
 	* @output true
 	**/
 	public void function onRequest() {
-		application.Relaxation.handleRequest();
+		application.REST.handleRequest();
 	}
 
 }
